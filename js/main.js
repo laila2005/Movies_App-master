@@ -1,94 +1,68 @@
-// DOM Elements
-const landingPage = document.querySelector(".hero-section");
-const header = document.querySelector("header");
-const menuIcon = document.querySelector("#menu-icon");
-const navbar = document.querySelector(".navbar");
-const mainNavbar = document.getElementById("mainNavbar");
-const heroSection = document.getElementById("home");
-
-// Image randomization for hero section
-const imageArray = ["home1.jpg", "home2.jpg", "home3.jpg"];
-let randomOption = true;
-
-// Randomize hero background images
-function randomizeImgs() {
-  if (randomOption === true) {
-    // Set initial random image
-    let randomNumber = Math.floor(Math.random() * imageArray.length);
-    landingPage.style.backgroundImage = `url("img/${imageArray[randomNumber]}")`;
+// Function to handle navbar styling
+function updateNavbar() {
+  const navbar = document.getElementById('mainNavbar');
+  const navbarBrand = navbar.querySelector('.navbar-brand');
+  const navLinks = navbar.querySelectorAll('.nav-link');
+  const togglerButton = navbar.querySelector('.navbar-toggler');
+  const togglerIcon = navbar.querySelector('.navbar-toggler-icon');
+  
+  if (window.scrollY > 50) {
+    // Scrolled state - white background with black text
+    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
     
-    // Change image every 4 seconds
-    setInterval(() => {
-      randomNumber = Math.floor(Math.random() * imageArray.length);
-      landingPage.style.backgroundImage = `url("img/${imageArray[randomNumber]}")`;
-    }, 4000);
-  }
-}
-
-// Mobile menu toggle
-function setupMobileMenu() {
-  if (menuIcon) {
-    menuIcon.onclick = () => {
-      navbar.classList.toggle("active");
-    };
-  }
-
-  window.onscroll = () => {
-    if (navbar.classList.contains("active")) {
-      navbar.classList.remove("active");
+    // Change brand color to dark (but keep film icon red)
+    const brandIcon = navbarBrand.querySelector('i');
+    navbarBrand.style.color = '#000';
+    if (brandIcon) {
+      brandIcon.style.color = '#dc3545'; // Keep icon red
     }
-  };
-}
-
-// Navbar scroll behavior
-function setupNavbarScroll() {
-  const heroHeight = heroSection.offsetHeight;
-  
-  function handleScroll() {
-    if (window.scrollY > heroHeight * 0.8) {
-      // Scrolled past 80% of hero height - show white navbar
-      mainNavbar.classList.add("scrolled");
-      header.classList.add("shadow");
-      
-      // Change navbar toggler color
-      const toggler = document.querySelector(".navbar-toggler");
-      if (toggler) {
-        toggler.style.borderColor = "#002F2F";
-        toggler.querySelector(".navbar-toggler-icon").style.backgroundImage = 
-          "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 47, 47, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
-      }
-    } else {
-      // In hero section - hide navbar
-      mainNavbar.classList.remove("scrolled");
-      header.classList.remove("shadow");
-      
-      // Reset navbar toggler color
-      const toggler = document.querySelector(".navbar-toggler");
-      if (toggler) {
-        toggler.style.borderColor = "white";
-        toggler.querySelector(".navbar-toggler-icon").style.backgroundImage = 
-          "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
-      }
+    
+    // Change nav links to BLACK
+    navLinks.forEach(link => {
+      link.style.color = '#000';
+    });
+    
+    // Change toggler for light theme
+    if (togglerButton) togglerButton.style.border = '1px solid #000';
+    if (togglerIcon) {
+      togglerIcon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
+    }
+  } else {
+    // Top state - transparent background with WHITE text for brand, RED for nav links
+    navbar.style.backgroundColor = 'transparent';
+    navbar.style.boxShadow = 'none';
+    
+    // Change brand color to WHITE (but keep film icon red)
+    const brandIcon = navbarBrand.querySelector('i');
+    navbarBrand.style.color = '#fff'; // WHITE color for brand text
+    if (brandIcon) {
+      brandIcon.style.color = '#dc3545'; // Keep icon red
+    }
+    
+    // Change nav links to RED
+    navLinks.forEach(link => {
+      link.style.color = '#dc3545'; // RED color
+    });
+    
+    // Change toggler for red theme
+    if (togglerButton) togglerButton.style.border = '1px solid #dc3545';
+    if (togglerIcon) {
+      togglerIcon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28220, 53, 69, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
     }
   }
-
-  // Initialize on page load
-  handleScroll();
-  
-  // Add scroll event listener
-  window.addEventListener("scroll", handleScroll);
 }
 
 // Smooth scrolling for navigation links
 function setupSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
+          behavior: 'smooth',
+          block: 'start'
         });
       }
     });
@@ -111,30 +85,16 @@ function setupMovieCards() {
 }
 
 // Initialize all functionality when DOM is loaded
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize random hero images
-  if (landingPage) {
-    randomizeImgs();
-  }
-  
-  // Setup mobile menu
-  setupMobileMenu();
-  
-  // Setup navbar scroll behavior
-  if (mainNavbar && heroSection) {
-    setupNavbarScroll();
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  // Run navbar update on page load to set initial state
+  updateNavbar();
   
   // Setup smooth scrolling
   setupSmoothScrolling();
   
   // Setup movie card effects
   setupMovieCards();
-  
-  // Add any other initialization code here
 });
 
-// Window load event for any additional setup
-window.addEventListener("load", function() {
-  // Any code that needs to run after all resources are loaded
-});
+// Run navbar update on scroll
+window.addEventListener('scroll', updateNavbar);
