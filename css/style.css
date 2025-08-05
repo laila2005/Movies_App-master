@@ -53,6 +53,24 @@
   color: #ff2c1f !important;
 }
 
+/* Card image styling for uniform size */
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Ensure cards have consistent height */
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
