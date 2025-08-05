@@ -15,7 +15,7 @@ function updateNavbar() {
     const brandIcon = navbarBrand.querySelector('i');
     navbarBrand.style.color = '#000';
     if (brandIcon) {
-      brandIcon.style.color = '#dc3545'; // Keep icon red
+      brandIcon.style.color = '#ff2c1f'; // Keep icon custom red
     }
     
     // Change nav links to BLACK
@@ -37,18 +37,18 @@ function updateNavbar() {
     const brandIcon = navbarBrand.querySelector('i');
     navbarBrand.style.color = '#fff'; // WHITE color for brand text
     if (brandIcon) {
-      brandIcon.style.color = '#dc3545'; // Keep icon red
+      brandIcon.style.color = '#ff2c1f'; // Keep icon custom red
     }
     
-    // Change nav links to RED
+    // Change nav links to custom RED
     navLinks.forEach(link => {
-      link.style.color = '#dc3545'; // RED color
+      link.style.color = '#ff2c1f'; // Custom RED color
     });
     
-    // Change toggler for red theme
-    if (togglerButton) togglerButton.style.border = '1px solid #dc3545';
+    // Change toggler for custom red theme
+    if (togglerButton) togglerButton.style.border = '1px solid #ff2c1f';
     if (togglerIcon) {
-      togglerIcon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28220, 53, 69, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
+      togglerIcon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 44, 31, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
     }
   }
 }
@@ -71,15 +71,21 @@ function setupSmoothScrolling() {
 
 // Movie card hover effects
 function setupMovieCards() {
-  const movieCards = document.querySelectorAll(".movie-card, .card");
+  const movieCards = document.querySelectorAll(".movie-card, .card, #movies .card, #coming .card");
   movieCards.forEach(card => {
+    // Set initial black background and remove any conflicting classes
+    card.style.backgroundColor = "#000";
+    card.classList.remove('bg-secondary');
+    
     card.addEventListener("mouseenter", () => {
       card.style.transform = "translateY(-5px)";
       card.style.transition = "transform 0.3s ease";
+      card.style.backgroundColor = "#000";
     });
     
     card.addEventListener("mouseleave", () => {
       card.style.transform = "translateY(0)";
+      card.style.backgroundColor = "#000";
     });
   });
 }
