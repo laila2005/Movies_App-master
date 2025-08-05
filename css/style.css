@@ -3,7 +3,69 @@
       padding-top: 0;
     }
     
-    /* Remove navbar CSS conflicts - let JavaScript handle all navbar styling */
+    /* Navbar styling */
+    .navbar {
+      transition: all 0.3s ease;
+    }
+    
+    /* Increase container width to push content to edges */
+    .navbar .container,
+    #home .container {
+      max-width: 95% !important;
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+    
+    /* Custom spacing for navbar links */
+    .navbar-nav .nav-item {
+      margin-left: 2.5rem;
+      margin-right: 2.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
+    }
+    
+    /* Decrease brand name left padding */
+    
+    /* Make Sign In button larger */
+    .custom-red-btn.btn-sm {
+      padding: 0.5rem 1.5rem !important;
+      font-size: 1rem !important;
+    }
+    
+    /* Red underline for active Home nav link */
+    .navbar-nav .nav-link.active {
+      border-bottom: 3px solid #ff2c1f !important;
+      padding-bottom: 0.25rem !important;
+    }
+   
+    .navbar.transparent {
+      background-color: transparent !important;
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      box-shadow: none !important;
+    }
+    
+    .navbar.transparent .navbar-brand,
+    .navbar.transparent .nav-link,
+    .navbar.transparent .navbar-toggler {
+      color: white !important;
+      opacity: 0.9;
+    }
+    
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.95) !important;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .navbar.scrolled .navbar-brand,
+    .navbar.scrolled .nav-link {
+      color: white !important;
+    }
     
     /* Hero section */
     .hero-section {
@@ -43,9 +105,9 @@
 
 
   .red-line {
-  border: none;
-  height: 5px;
+  height: 2px;
   background-color: #ff2c1f;
+  margin-bottom: 20px;
 
 }
 
