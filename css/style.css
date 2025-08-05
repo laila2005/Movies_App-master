@@ -133,6 +133,15 @@
   justify-content: space-between;
 }
 
+/* Reduce spacing between card title and text */
+.card-title {
+  margin-bottom: 0.1rem !important;
+}
+
+.card-title.mb-1 {
+  margin-bottom: 0.1rem !important;
+}
+
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -198,4 +207,25 @@
 
     .newsletter-subscribe-btn:hover {
       background-color: #e0281c;
+    }
+
+    /* Social media icons styling */
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      color: #ff2c1f !important;
+      border-radius: 50%;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+      font-size: 1.5rem;
+    }
+
+    .social-icon:hover {
+      background-color: #ff2c1f;
+      color: white !important;
+      transform: translateY(-2px);
     }
