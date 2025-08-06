@@ -3,6 +3,37 @@ body {
   padding-top: 0;
 }
 
+/* Custom Scrollbar with Red Theme and Circular Edges */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff2c1f, #e0281c);
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e0281c, #cc1f14);
+  box-shadow: 0 0 8px rgba(255, 44, 31, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff2c1f #000;
+}
+
 /* Bootstrap-consistent navbar styling */
 .navbar {
   transition: all 0.3s ease;
