@@ -101,9 +101,39 @@ body {
 }
 
 .red-line {
-  height: 2px;
+  height: 1px;
   background-color: #ff2c1f;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Responsive red line alignment with cards */
+@media (min-width: 1200px) {
+  .red-line {
+    width: calc(100% - var(--bs-gutter-x, 1.5rem));
+    margin-left: calc(var(--bs-gutter-x, 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .red-line {
+    width: calc(100% - var(--bs-gutter-x, 1.5rem));
+    margin-left: calc(var(--bs-gutter-x, 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .red-line {
+    width: calc(100% - var(--bs-gutter-x, 1.5rem));
+    margin-left: calc(var(--bs-gutter-x, 1.5rem) / 2);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .red-line {
+    width: calc(100% - var(--bs-gutter-x, 1.5rem));
+    margin-left: calc(var(--bs-gutter-x, 1.5rem) / 2);
+  }
 }
 
 .text-red {
