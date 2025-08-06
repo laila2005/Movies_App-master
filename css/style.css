@@ -1,94 +1,69 @@
- body {
-      font-family: 'Inter', sans-serif;
-      padding-top: 0;
-    }
-    
-    /* Navbar styling */
-    .navbar {
-      transition: all 0.3s ease;
-    }
-    
-    /* Increase container width to push content to edges */
-    .navbar .container,
-    #home .container {
-      max-width: 95% !important;
-      padding-left: 3rem !important;
-      padding-right: 3rem !important;
-    }
-    
-    /* Custom spacing for navbar links */
-    .navbar-nav .nav-item {
-      margin-left: 2.5rem;
-      margin-right: 2.5rem;
-    }
-    
-    .navbar-nav .nav-link {
-      padding-left: 0.25rem !important;
-      padding-right: 0.25rem !important;
-    }
-    
-    /* Decrease brand name left padding */
-    
-    /* Make Sign In button larger */
-    .custom-red-btn.btn-sm {
-      padding: 0.5rem 1.5rem !important;
-      font-size: 1rem !important;
-    }
-    
-    /* Red underline for active Home nav link */
-    .navbar-nav .nav-link.active {
-      border-bottom: 3px solid #ff2c1f !important;
-      padding-bottom: 0.25rem !important;
-    }
-   
-    .navbar.transparent {
-      background-color: transparent !important;
-      -webkit-backdrop-filter: none !important;
-      backdrop-filter: none !important;
-      box-shadow: none !important;
-    }
-    
-    .navbar.transparent .navbar-brand,
-    .navbar.transparent .nav-link,
-    .navbar.transparent .navbar-toggler {
-      color: white !important;
-      opacity: 0.9;
-    }
-    
-    .navbar.scrolled {
-      background-color: rgba(0, 0, 0, 0.95) !important;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-    }
-    
-    .navbar.scrolled .navbar-brand,
-    .navbar.scrolled .nav-link {
-      color: white !important;
-    }
-    
-    /* Hero section */
-    .hero-section {
-      background-image: url('img/home3.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      color: white;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    
-    .hero-section h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    
-    .hero-section p {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-    
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 0;
+}
+
+/* Navbar styling */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+/* Container responsive width */
+.navbar .container,
+#home .container {
+  max-width: 95% !important;
+}
+
+/* Responsive navbar spacing */
+.navbar-nav .nav-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-link {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+/* Sign In button styling */
+.custom-red-btn.btn-sm {
+  padding: 0.5rem 1.5rem !important;
+  font-size: 1rem !important;
+}
+
+/* Active nav link styling */
+.navbar-nav .nav-link.active {
+  border-bottom: 3px solid #ff2c1f !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.navbar.transparent {
+  background-color: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.navbar.transparent .navbar-brand,
+.navbar.transparent .nav-link,
+.navbar.transparent .navbar-toggler {
+  color: white !important;
+  opacity: 0.9;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+  color: white !important;
+}
+
+/* Custom button styling */
 .custom-red-btn {
   background-color: #ff2c1f;
   border: none;
@@ -97,34 +72,36 @@
 .custom-red-btn:hover {
   background-color: #e0281c; 
 }
- 
-    
+
+/* Utility classes */
 .bg-black {
   background-color: #000 !important;
 }
 
-
-  .red-line {
+.red-line {
   height: 2px;
   background-color: #ff2c1f;
   margin-bottom: 20px;
-
 }
 
 .text-red {
   color: #ff2c1f !important;
 }
 
-/* Card image styling for uniform size */
+/* Card styling */
 .card-img-top {
-  height: 300px;
+  height: 250px;
   object-fit: cover;
   object-position: center;
 }
 
-/* Ensure cards have consistent height */
 .card {
   height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card-body {
@@ -133,7 +110,6 @@
   justify-content: space-between;
 }
 
-/* Reduce spacing between card title and text */
 .card-title {
   margin-bottom: 0.1rem !important;
 }
@@ -142,90 +118,133 @@
   margin-bottom: 0.1rem !important;
 }
 
+/* Newsletter section */
+.email-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2.25rem;
-      }
-      
-      .hero-section p {
-        font-size: 1rem;
-      }
-      
-      .navbar-collapse {
-        background-color: white;
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 0.25rem;
-      }
-      
-      .navbar.scrolled .navbar-collapse .nav-link {
-        color: #002F2F !important;
-      }
-    }
-    
-    /* Additional movie section styles */
-    .movie-card {
-      transition: transform 0.3s;
-    }
-    
-    .movie-card:hover {
-      transform: translateY(-5px);
-    }
+.newsletter-email {
+  width: 100%;
+  padding: 0.75rem 140px 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
 
-    /* Newsletter section overlapping button styles */
-    .email-input-container {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
+.newsletter-subscribe-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff2c1f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
 
-    .newsletter-email {
-      width: 100%;
-      padding: 0.75rem 140px 0.75rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 0.375rem;
-      font-size: 1rem;
-    }
+.newsletter-subscribe-btn:hover {
+  background-color: #e0281c;
+}
 
-    .newsletter-subscribe-btn {
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #ff2c1f;
-      color: white;
-      border: none;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.25rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-      z-index: 2;
-    }
+/* Social media icons */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #ff2c1f !important;
+  border-radius: 50%;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
 
-    .newsletter-subscribe-btn:hover {
-      background-color: #e0281c;
-    }
+.social-icon:hover {
+  background-color: #ff2c1f;
+  color: white !important;
+  transform: translateY(-2px);
+}
 
-    /* Social media icons styling */
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: white;
-      color: #ff2c1f !important;
-      border-radius: 50%;
-      text-decoration: none !important;
-      transition: all 0.3s ease;
-      font-size: 1.5rem;
-    }
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .navbar .container,
+  #home .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
 
-    .social-icon:hover {
-      background-color: #ff2c1f;
-      color: white !important;
-      transform: translateY(-2px);
-    }
+@media (max-width: 992px) {
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container,
+  #home .container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .card-img-top {
+    height: 180px;
+  }
+  
+  .newsletter-email {
+    padding: 0.75rem 120px 0.75rem 1rem;
+  }
+  
+  .newsletter-subscribe-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 150px;
+  }
+  
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  
+  .newsletter-email {
+    padding: 0.75rem 100px 0.75rem 0.75rem;
+  }
+  
+  .newsletter-subscribe-btn {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
