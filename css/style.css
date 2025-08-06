@@ -3,7 +3,7 @@ body {
   padding-top: 0;
 }
 
-/* Navbar styling */
+/* Bootstrap-consistent navbar styling */
 .navbar {
   transition: all 0.3s ease;
   background-color: transparent !important;
@@ -16,7 +16,7 @@ body {
   padding: 1rem 0;
 }
 
-/* Navbar brand styling */
+/* Bootstrap navbar brand with custom styling */
 .navbar-brand {
   color: white !important;
   font-weight: bold;
@@ -32,14 +32,14 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Nav links styling */
+/* Bootstrap nav links with custom styling */
 .navbar-nav {
   text-align: center;
 }
 
 .navbar-nav .nav-link {
   color: #ff2c1f !important;
-  font-weight: 500;
+  font-weight: 800;
   transition: color 0.3s ease;
   margin: 0 0.5rem;
   position: relative;
@@ -67,7 +67,7 @@ body {
   color: #ff2c1f !important;
 }
 
-/* Navbar toggler styling */
+/* Bootstrap navbar toggler with minimal custom styling */
 .navbar-toggler {
   border: none;
   padding: 0.25rem 0.5rem;
@@ -75,6 +75,34 @@ body {
 
 .navbar-toggler:focus {
   box-shadow: none;
+}
+
+/* Mobile menu - always white background */
+@media (max-width: 991.98px) {
+  .navbar-collapse,
+  .navbar.scrolled .navbar-collapse,
+  .navbar:not(.scrolled) .navbar-collapse {
+    background-color: white !important;
+  }
+  
+  .navbar-collapse .nav-link,
+  .navbar.scrolled .navbar-collapse .nav-link,
+  .navbar:not(.scrolled) .navbar-collapse .nav-link {
+    color: black !important;
+  }
+  
+  .navbar-collapse .nav-link.active,
+  .navbar.scrolled .navbar-collapse .nav-link.active,
+  .navbar:not(.scrolled) .navbar-collapse .nav-link.active {
+    color: black !important;
+    border-bottom: 2px solid #ff2c1f !important;
+  }
+  
+  .navbar-collapse .nav-link:hover,
+  .navbar.scrolled .navbar-collapse .nav-link:hover,
+  .navbar:not(.scrolled) .navbar-collapse .nav-link:hover {
+    color: #ff2c1f !important;
+  }
 }
 
 /* Custom button styling */
@@ -107,7 +135,15 @@ body {
   width: 100%;
 }
 
-/* Responsive red line alignment with cards */
+/* Red line using Bootstrap grid alignment */
+.red-line {
+  height: 1px;
+  background-color: #ff2c1f;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Responsive red line alignment with Bootstrap gutters */
 @media (min-width: 1200px) {
   .red-line {
     width: calc(100% - var(--bs-gutter-x, 1.5rem));
@@ -245,7 +281,7 @@ body {
   }
   
   .navbar-collapse {
-    background-color: white;
+    background-color: white !important;
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -258,13 +294,30 @@ body {
     border-bottom: 1px solid #eee;
   }
   
+  .navbar-collapse .nav-link.active {
+    color: black !important;
+    border-bottom: 2px solid #ff2c1f;
+  }
+  
+  .navbar-collapse .nav-link:hover {
+    color: #ff2c1f !important;
+  }
+  
   .navbar-collapse .nav-link:last-child {
     border-bottom: none;
   }
   
   .navbar-collapse .custom-red-btn {
     margin-top: 1rem;
-    width: 100%;
+    width: auto;
+  }
+  
+  /* Center button using Bootstrap's text utilities */
+  .navbar-collapse {
+    text-align: center;
+  }
+  
+  .navbar-collapse .navbar-nav {
     text-align: center;
   }
 }
