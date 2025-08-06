@@ -19,7 +19,7 @@ A modern, responsive movie showcase website built with Bootstrap 5, featuring dy
 
 ## 🖥️ Demo
 
-**[Live Demo](https://movies-app-master-phi.vercel.app/)
+**[Live Demo](https://movies-app-master-phi.vercel.app/)**
 
 ## 🛠️ Tech Stack
 
