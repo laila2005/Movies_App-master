@@ -6,71 +6,93 @@ body {
 /* Navbar styling */
 .navbar {
   transition: all 0.3s ease;
-}
-
-/* Container responsive width */
-.navbar .container,
-#home .container {
-  max-width: 95% !important;
-}
-
-/* Responsive navbar spacing */
-.navbar-nav .nav-item {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.navbar-nav .nav-link {
-  padding-left: 0.25rem !important;
-  padding-right: 0.25rem !important;
-}
-
-/* Sign In button styling */
-.custom-red-btn.btn-sm {
-  padding: 0.5rem 1.5rem !important;
-  font-size: 1rem !important;
-}
-
-/* Active nav link styling */
-.navbar-nav .nav-link.active {
-  border-bottom: 3px solid #ff2c1f !important;
-  padding-bottom: 0.25rem !important;
-}
-
-.navbar.transparent {
   background-color: transparent !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-
-.navbar.transparent .navbar-brand,
-.navbar.transparent .nav-link,
-.navbar.transparent .navbar-toggler {
-  color: white !important;
-  opacity: 0.9;
+  padding: 1.5rem 0;
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.95) !important;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  background-color: white !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 }
 
-.navbar.scrolled .navbar-brand,
-.navbar.scrolled .nav-link {
+/* Navbar brand styling */
+.navbar-brand {
   color: white !important;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand {
+  color: black !important;
+}
+
+.brand-logo {
+  color: #ff2c1f !important;
+  transition: color 0.3s ease;
+}
+
+/* Nav links styling */
+.navbar-nav {
+  text-align: center;
+}
+
+.navbar-nav .nav-link {
+  color: #ff2c1f !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin: 0 0.5rem;
+  position: relative;
+  padding-bottom: 0.5rem !important;
+}
+
+.navbar-nav .nav-link.active {
+  border-bottom: 3px solid #ff2c1f;
+}
+
+.navbar.scrolled .navbar-nav .nav-link {
+  color: black !important;
+}
+
+.navbar.scrolled .navbar-nav .nav-link.active {
+  color: black !important;
+  border-bottom: 3px solid #ff2c1f;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #e0281c !important;
+}
+
+.navbar.scrolled .navbar-nav .nav-link:hover {
+  color: #ff2c1f !important;
+}
+
+/* Navbar toggler styling */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 /* Custom button styling */
 .custom-red-btn {
   background-color: #ff2c1f;
   border: none;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
 }
 
 .custom-red-btn:hover {
-  background-color: #e0281c; 
+  background-color: #e0281c;
+  color: white;
+  transform: translateY(-1px);
 }
 
 /* Utility classes */
@@ -108,14 +130,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.card-title {
-  margin-bottom: 0.1rem !important;
-}
-
-.card-title.mb-1 {
-  margin-bottom: 0.1rem !important;
 }
 
 /* Newsletter section */
@@ -175,45 +189,18 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .navbar .container,
-  #home .container {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-  
-  .navbar-nav .nav-item {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-  }
-}
-
 @media (max-width: 992px) {
   .card-img-top {
     height: 200px;
   }
+  
+  .custom-red-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .navbar .container,
-  #home .container {
-    max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  .navbar-nav .nav-item {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 1rem;
-    margin-top: 0.5rem;
-    border-radius: 0.25rem;
-  }
-  
   .card-img-top {
     height: 180px;
   }
@@ -225,6 +212,30 @@ body {
   .newsletter-subscribe-btn {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
+  }
+  
+  .navbar-collapse {
+    background-color: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-collapse .nav-link {
+    color: black !important;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar-collapse .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .navbar-collapse .custom-red-btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
   }
 }
 
